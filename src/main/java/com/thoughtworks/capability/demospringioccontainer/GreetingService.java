@@ -5,8 +5,12 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
 
 @Service
-@Scope(value="prototype", proxyMode= ScopedProxyMode.TARGET_CLASS)
+@Scope("prototype")
 public class GreetingService {
+
+    public GreetingService(){
+        System.out.println("service constructor");
+    }
 
     String sayHi() {
         return "hello world";
